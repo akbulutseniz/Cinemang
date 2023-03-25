@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Cinemang.Models.Theatre>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_StaffHomeLayout.cshtml";
+}
+
+
+
+<div class="header">
+    <h2>
+        Salonları Listele
+        <small>Sisteme daha önce eklenmiş salonları burada görüntüleyebilir ve isterseniz düzenleyebilirsiniz.</small>
+    </h2>
+    <ul class="header-dropdown m-r--5">
+        <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="material-icons">more_vert</i>
+            </a>
+            <ul class="dropdown-menu pull-right">
+                <li><a href="javascript:void(0);">Action</a></li>
+                <li><a href="javascript:void(0);">Another action</a></li>
+                <li><a href="javascript:void(0);">Something else here</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="body table-responsive">
+    <p>
+        @Html.ActionLink("Salon Ekle", "Index", "AddSalon")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cinema.cName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tInformation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tTotalSeat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tRating)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cinema.cName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tInformation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tTotalSeat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tRating)
+            </td>
+
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", "EditSalon", new { id = item.t_id }, null)
+                @Html.ActionLink("Detaylar", "Details", "DetailsSalon", new { id = item.t_id }, null)
+                @Html.ActionLink("Sil", "Delete", "DeleteSalon", new { id = item.t_id }, null)
+            </td>
+        </tr>
+        }
+
+    </table>
+</div>
+
+

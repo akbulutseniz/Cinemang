@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_UserLoginLayout.cshtml";
+}
+<h1>Üye Girişi</h1>
+<form action="/UserLogin/LoginUser" method="post">
+    <input type="text" id="username" name="username" placeholder="username" required="required" />
+    <input type="password" id="password" name="password" placeholder="password" required="required"/>
+    <button type="submit" class="btn btn-primary btn-block btn-large" onclick="">Giriş</button>
+</form>
+
+

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Cinemang.Models.Seans>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_StaffHomeLayout.cshtml";
+}
+
+
+<div class="header">
+    <h2>
+        Seansları Listele
+        <small>Sisteme daha önce eklenmiş seansları burada görüntüleyebilir ve isterseniz düzenleyebilirsiniz.</small>
+    </h2>
+    <ul class="header-dropdown m-r--5">
+        <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="material-icons">more_vert</i>
+            </a>
+            <ul class="dropdown-menu pull-right">
+                <li><a href="javascript:void(0);">Action</a></li>
+                <li><a href="javascript:void(0);">Another action</a></li>
+                <li><a href="javascript:void(0);">Something else here</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="body table-responsive">
+    <p>
+        @Html.ActionLink("Seans Ekle", "Index", "AddSeans")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie.mName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.seansStartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.seansEndTime)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Movie.mName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.seansStartTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.seansEndTime)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Düzenle", "Edit", "EditSeans", new { id = item.seans_id }, null)
+                    @Html.ActionLink("Detaylar", "Details", "DetailsSeans", new { id = item.seans_id }, null)
+                    @Html.ActionLink("Sil", "Delete", "DeleteMSeans", new { id = item.seans_id }, null)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+
+
+

@@ -1,0 +1,255 @@
+﻿<!DOCTYPE HTML>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Moviepoint - Online Movie,Vedio and TV Show HTML Template</title>
+    <!-- Favicon Icon -->
+    <link rel="icon" type="image/png" href="~/Content/User/assets/img/favcion.png" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="~/Content/User/assets/css/bootstrap.min.css" media="all" />
+    <!-- Slick nav CSS -->
+    <link rel="stylesheet" type="text/css" href="~/Content/User/assets/css/slicknav.min.css" media="all" />
+    <!-- Iconfont CSS -->
+    <link rel="stylesheet" type="text/css" href="~/Content/User/assets/css/icofont.css" media="all" />
+    <!-- Owl carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="~/Content/User/assets/css/owl.carousel.css">
+    <!-- Popup CSS -->
+    <link rel="stylesheet" type="text/css" href="~/Content/User/assets/css/magnific-popup.css">
+    <!-- Main style CSS -->
+    <link rel="stylesheet" type="text/css" href="~/Content/User/assets/css/style.css" media="all" />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" type="text/css" href="~/Content/User/assets/css/responsive.css" media="all" />
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- Page loader -->
+    <div id="preloader"></div>
+    <!-- header section start -->
+    <header class="header">
+        <div class="container">
+            <div class="header-area">
+                <div class="logo">
+                    <a href=@Url.Action("Index","Home")><img src="~/Content/User/assets/img/logoooo.png" alt="logo" /></a>
+                </div>
+                <div class="header-right">
+                    <form action="#">
+                        <select>
+                            <option value="Movies">Filmler</option>
+                            <option value="Movies">Sinemalar</option>
+                            <option value="Movies">Salonlar</option>
+                        </select>
+                        <input type="text" />
+                        <button><i class="icofont icofont-search"></i></button>
+                    </form>
+                    <ul>
+                        <li><a href="#">Hoşgeldiniz!</a></li>
+                        <li><a href="@Url.Action("Index", "UserLogin")">Giriş</a></li>
+                    </ul>
+                </div>
+                <div class="menu-area">
+                    <div class="responsive-menu"></div>
+                    <div class="mainmenu">
+                        <ul id="primary-menu">
+                            <li><a class="active" href="@Url.Action("Index","Home")">Anasayfa</a></li>
+                            <li><a href="@Url.Action("Index","UserMovies")">Filmler</a></li>
+                            <li><a href="@Url.Action("Index","UserInTheaters")">Vizyondakiler</a></li>
+                            <li><a href="@Url.Action("Index","UserComingSoon")">Çok Yakında</a></li>
+                            <li><a href="blog.html">News</a></li>
+                            <li>
+                                <a href="#">Pages <i class="icofont icofont-simple-down"></i></a>
+                                <ul>
+                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                    <li><a href="movie-details.html">Movie Details</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="theme-btn" href="#"><i class="icofont icofont-ticket"></i> Biletlerim </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header section end -->
+    <!-- breadcrumb area start -->
+    <section class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-area-content">
+                        <h1>Film Detay Sayfası</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- breadcrumb area end -->
+    <!-- transformers area start -->
+    <section class="transformers-area">
+        <div class="container">
+            @RenderBody()
+            @RenderSection("Comment")
+        </div>
+    </section><!-- transformers area end -->
+    <!-- details area start -->
+    <section class="details-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="details-content">
+                        <div class="details-overview">
+                            <h2>Overview</h2>
+                            <p>Humans are at war with the Transformers, and Optimus Prime is gone. The key to saving the future lies buried in the secrets of the past and the hidden history of Transformers on Earth. Now it's up to the unlikely alliance of inventor Cade Yeager, Bumblebee, a n English lord and an Oxford professor to save the world. Transformers: The Last Knight has a deeper mythos and bigger spectacle than its predecessors, yet still ends up being mostly hollow and cacophonous. The first "Transformers" movie that could actually be characterized as badass. Which isn't a bad thing. It may, in fact, be better.</p>
+                        </div>
+                        <div class="details-reply">
+                            <h2>Leave a Reply</h2>
+                            <form action="#">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="select-container">
+                                            <input type="text" placeholder="Name" />
+                                            <i class="icofont icofont-ui-user"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="select-container">
+                                            <input type="text" placeholder="Email" />
+                                            <i class="icofont icofont-envelope"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="select-container">
+                                            <input type="text" placeholder="Phone" />
+                                            <i class="icofont icofont-phone"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="textarea-container">
+                                            <textarea placeholder="Type Here Message"></textarea>
+                                            <button><i class="icofont icofont-send-mail"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="details-comment">
+                            <a class="theme-btn theme-btn2" href="#">Post Comment</a>
+                            <p>You may use these HTML tags and attributes: You may use these HTML tags and attributes: You may use these HTML tags and attributes: </p>
+                        </div>
+                        <div class="details-thumb">
+                            <div class="details-thumb-prev">
+                                <div class="thumb-icon">
+                                    <i class="icofont icofont-simple-left"></i>
+                                </div>
+                                <div class="thumb-text">
+                                    <h4>Previous Post</h4>
+                                    <p>Standard Post With Gallery</p>
+                                </div>
+                            </div>
+                            <div class="details-thumb-next">
+                                <div class="thumb-text">
+                                    <h4>Next Post</h4>
+                                    <p>Standard Post With Preview Image</p>
+                                </div>
+                                <div class="thumb-icon">
+                                    <i class="icofont icofont-simple-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center text-lg-left">
+                    <div class="portfolio-sidebar">
+                        <img src="assets/img/sidebar/sidebar1.png" alt="sidebar" />
+                        <img src="assets/img/sidebar/sidebar2.png" alt="sidebar" />
+                        <img src="assets/img/sidebar/sidebar4.png" alt="sidebar" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- details area end -->
+    <!-- footer section start -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="widget">
+                        <img src="~/Content/User/assets/img/logoooo.png" alt="about" />
+                        <p>Kuruçeşme Mh. Deü Kaynaklar Yerleşkesi Pk:35370 Buca/izmir</p>
+                        <h6><span>İletişim: </span>(0232) 412 74 01</h6>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="widget">
+                        <h4>Yasal</h4>
+                        <ul>
+                            <li><a href="#">Kullanım</a></li>
+                            <li><a href="#">Gizlilik</a></li>
+                            <li><a href="#">Güvenlik</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="widget">
+                        <h4>Hesap</h4>
+                        <ul>
+                            <li><a href="#">Hesabım</a></li>
+                            <li><a href="#">Biletlerim</a></li>
+                            <li><a href="#">Rezervasyonlarım</a></li>
+                            <li><a href="#">Kullanım Klavuzu</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="widget">
+                        <h4>Yenilikler</h4>
+                        <p>Yenilik ve kampanyalar için bize ulaşabilirsiniz</p>
+                        <form action="#">
+                            <input type="text" placeholder="E mail adresiniz..." />
+                            <button>Bize Katıl</button>
+                        </form>
+                        <a href="@Url.Action("Index", "StaffLogin")">Site Yönetimi</a>
+                    </div>
+                </div>
+            </div>
+            <hr />
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 text-center text-lg-left">
+                        <div class="copyright-content">
+                            <p><a href="https://www.templateshub.net">Cinemang | 2021</a> Tüm Hakları Saklıdır.      (DEUCENG)</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center text-lg-right">
+                        <div class="copyright-content">
+                            <a href="#" class="scrollToTop">
+                                Yukarı Git<i class="icofont icofont-arrow-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer><!-- footer section end -->
+    <script src="~/Content/User/assets/js/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="~/Content/User/assets/js/bootstrap.min.js"></script>
+    <!-- Slick nav JS -->
+    <script src="~/Content/User/assets/js/jquery.slicknav.min.js"></script>
+    <!-- owl carousel JS -->
+    <script src="~/Content/User/assets/js/owl.carousel.min.js"></script>
+    <!-- Popup JS -->
+    <script src="~/Content/User/assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- Isotope JS -->
+    <script src="~/Content/User/assets/js/isotope.pkgd.min.js"></script>
+    <!-- main JS -->
+    <script src="~/Content/User/assets/js/main.js"></script>
+</body>
+
+</html>

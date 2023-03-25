@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Cinemang.Models.Ticket>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_StaffHomeLayout.cshtml";
+}
+
+<div class="header">
+    <h2>
+        Biletleri Listele
+        <small>Sisteme kaydedilmiş biletleri burada görüntüleyebilir ve isterseniz düzenleyebilirsiniz.</small>
+    </h2>
+    <ul class="header-dropdown m-r--5">
+        <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="material-icons">more_vert</i>
+            </a>
+            <ul class="dropdown-menu pull-right">
+                <li><a href="javascript:void(0);">Action</a></li>
+                <li><a href="javascript:void(0);">Another action</a></li>
+                <li><a href="javascript:void(0);">Something else here</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="body table-responsive">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Seans.seans_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seat.se_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Users.uUsername)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ticPrice)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Seans.seans_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Seat.se_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Users.uUsername)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ticPrice)
+                </td>
+                <td>
+                    @Html.ActionLink("Düzenle", "Edit", "EditTicket", new { id = item.tic_id }, null)
+                    @Html.ActionLink("Detaylar", "Details", "DetailsTicket", new { id = item.tic_id }, null)
+                    @Html.ActionLink("Sil", "Delete", "DeleteTicket", new { id = item.tic_id }, null)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+
+

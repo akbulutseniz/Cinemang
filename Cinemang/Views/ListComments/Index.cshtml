@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Cinemang.Models.Comments>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_StaffHomeLayout.cshtml";
+}
+
+<div class="header">
+    <h2>
+        Son Eklenen Yorumları Listele
+        <small>Sisteme daha son eklenmiş yorumları burada görüntüleyebilir ve isterseniz kaldırabilirsiniz.</small>
+    </h2>
+    <ul class="header-dropdown m-r--5">
+        <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="material-icons">more_vert</i>
+            </a>
+            <ul class="dropdown-menu pull-right">
+                <li><a href="javascript:void(0);">Action</a></li>
+                <li><a href="javascript:void(0);">Another action</a></li>
+                <li><a href="javascript:void(0);">Something else here</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="body table-responsive">
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie.mName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Users.uUsername)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.comComment)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Movie.mName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Users.uUsername)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comComment)
+        </td>
+
+        <td>
+            @Html.ActionLink("Sil", "Delete", "DeleteComment", new { id = item.com_id }, null)
+        </td>
+    </tr>
+        }
+
+    </table>
+</div>

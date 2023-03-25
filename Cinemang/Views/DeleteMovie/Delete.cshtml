@@ -1,0 +1,134 @@
+﻿@model Cinemang.Models.Movie
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_StaffHomeLayout.cshtml";
+}
+
+<div class="header">
+    <h2>
+        Film Sil
+        <small>Seçmiş olduğunuz filme ait bilgileri görüntüleyerek isterseniz filmi silebilirsiniz.</small>
+    </h2>
+    <ul class="header-dropdown m-r--5">
+        <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="material-icons">more_vert</i>
+            </a>
+            <ul class="dropdown-menu pull-right">
+                <li><a href="javascript:void(0);">Action</a></li>
+                <li><a href="javascript:void(0);">Another action</a></li>
+                <li><a href="javascript:void(0);">Something else here</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="body table-responsive">
+    <h3>Aşağıda listelenen bilgilere ait kaydı silmek istediğinizden emin misiniz?</h3>
+    <div>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.mName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.mName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.mReleaseDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.mReleaseDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.mTime)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.mTime)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.mDirectors)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.mDirectors)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.mWritters)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.mWritters)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.mCast)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.mCast)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.mCountry)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.mCountry)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.mLanguage)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.mLanguage)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.mGenre)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.mGenre)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.mInformation)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.mInformation)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.mImageUrl)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.mImageUrl)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+
+            @Html.ActionLink("Listeye Geri Dön", "Index", "ListMovies")|
+            <input type="submit" value="Sil" class="btn btn-default" /> 
+
+    </div>
+        }
+    </div>
+
+</div>
+

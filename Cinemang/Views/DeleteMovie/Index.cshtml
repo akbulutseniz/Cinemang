@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Cinemang.Models.Movie>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_StaffHomeLayout.cshtml";
+}
+
+
+<div class="header">
+    <h2>
+       Filmleri Kaldır
+        <small>Sistemde bulunan herhangi bir filmi arayarak isterseniz silebilirsiniz.</small>
+    </h2>
+    <ul class="header-dropdown m-r--5">
+        <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="material-icons">more_vert</i>
+            </a>
+            <ul class="dropdown-menu pull-right">
+                <li><a href="javascript:void(0);">Action</a></li>
+                <li><a href="javascript:void(0);">Another action</a></li>
+                <li><a href="javascript:void(0);">Something else here</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="body table-responsive">
+    <p>
+    <p>
+        @using (Html.BeginForm())
+        {
+        <p>
+            Aramak İstediğiniz Filmin Adını Giriniz: @Html.TextBox("SearchString") 
+            <input type="submit" value="Ara" />
+        </p>
+    }
+        </p>
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.mName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.mTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.mCountry)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.mLanguage)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.mGenre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.mInformation)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.mName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.mTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.mCountry)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.mLanguage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.mGenre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.mInformation)
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Sil", "Delete", "DeleteMovie", new { id = item.m_id }, null)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+

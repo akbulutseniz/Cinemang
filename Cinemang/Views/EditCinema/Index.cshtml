@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Cinemang.Models.Cinema>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_StaffHomeLayout.cshtml";
+}
+
+<div class="header">
+    <h2>
+        Sinemaları Düzenle
+        <small>Sistemde bulunan herhangi bir sinemayı arayarak isterseniz düzenleyebilirsiniz.</small>
+    </h2>
+    <ul class="header-dropdown m-r--5">
+        <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="material-icons">more_vert</i>
+            </a>
+            <ul class="dropdown-menu pull-right">
+                <li><a href="javascript:void(0);">Action</a></li>
+                <li><a href="javascript:void(0);">Another action</a></li>
+                <li><a href="javascript:void(0);">Something else here</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="body table-responsive">
+    <p>
+    <p>
+        @using (Html.BeginForm())
+        {
+        <p>
+            Aramak İstediğiniz Sinemanın Lokasyonunu Giriniz: @Html.TextBox("SearchString")
+            <input type="submit" value="Ara" />
+        </p>
+    }
+        </p>
+        </p>
+<table class="table">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cLocation)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.cName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cLocation)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", "EditCinema", new { id = item.c_id }, null)
+      
+            </td>
+        </tr>
+    }
+
+</table>
+    </div>
+

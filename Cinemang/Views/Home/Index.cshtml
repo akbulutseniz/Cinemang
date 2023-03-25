@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Cinemang.Models.Movie>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_UserIndexLayout.cshtml";
+}
+
+@section Slider{
+    @foreach (var item in Model)
+    {
+    <div class="row hero-area-slide">
+        <div class="col-lg-6 col-md-5">
+            <div class="hero-area-content">
+                <img src=@Html.DisplayFor(modelItem => item.mImageUrl) alt="about" />
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-7">
+            <div class="hero-area-content pr-50">
+                <h2>@Html.DisplayFor(modelItem => item.mName)</h2>
+                <div class="review">
+                    <div class="author-review">
+                        <i class="icofont icofont-star"></i>
+                        <i class="icofont icofont-star"></i>
+                        <i class="icofont icofont-star"></i>
+                        <i class="icofont icofont-star"></i>
+                        <i class="icofont icofont-star"></i>
+                    </div>
+                    <h4>@Html.DisplayFor(modelItem => item.mLanguage)</h4>
+                </div>
+                <p>@Html.DisplayFor(modelItem => item.mInformation)</p>
+                <h4>Yönetmen:</h4>
+                <div class="slide-cast">
+                    @Html.DisplayFor(modelItem => item.mDirectors)
+                </div>
+                <h4>Oyuncular:</h4>
+                <div class="slide-cast">
+                    @Html.DisplayFor(modelItem => item.mCast)
+                </div>
+                <h4>Senaryo:</h4>
+                <div class="slide-cast">
+                    @Html.DisplayFor(modelItem => item.mWritters)
+                </div>
+
+                <div class="slide-trailor">
+                    <a href="@Url.Action("Display", "UserDisplayMovieDetails", new { id = item.m_id })">
+                        <h3>Detaylar</h3></a>
+                        <a class="theme-btn theme-btn2" href="@Url.Action("SellTicket", "UserBuyTicket", new { id = item.m_id })"><i class="icofont icofont-play"></i> Bilet Al</a>
+</div>
+            </div>
+        </div>
+    </div>
+
+    }
+}
+
+
+<div class="row portfolio-item">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 col-sm-6 soon released">
+            <div class="single-portfolio">
+                <div class="single-portfolio-img">
+                    <a href="@Url.Action("Display", "UserDisplayMovieDetails", new { id = item.m_id })"><img src=@Html.DisplayFor(modelItem => item.mImageUrl) alt="portfolio" /></a>
+                </div>
+                <div class="portfolio-content">
+                    <h2>@Html.DisplayFor(modelItem => item.mName)</h2>
+                    <div class="review">
+                        <div class="author-review">
+                            <i class="icofont icofont-star"></i>
+                            <i class="icofont icofont-star"></i>
+                            <i class="icofont icofont-star"></i>
+                            <i class="icofont icofont-star"></i>
+                            <i class="icofont icofont-star"></i>
+                        </div>
+                        <h4>@Html.DisplayFor(modelItem => item.mCountry)</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+

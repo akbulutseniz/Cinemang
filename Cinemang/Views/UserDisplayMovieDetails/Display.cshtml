@@ -1,0 +1,179 @@
+﻿@model Cinemang.Models.Movie
+
+@{
+    ViewBag.Title = "Display";
+    Layout = "~/Views/Shared/_UserMovieDisplayLayout.cshtml";
+}
+
+<!-- transformers area start -->
+<section class="transformers-area">
+    <div class="container">
+        <div class="transformers-box">
+            <div class="row flexbox-center">
+                <div class="col-lg-5 text-lg-left text-center">
+                    <div class="transformers-content">
+                        <img src="@Html.DisplayFor(model => model.mImageUrl)" alt="about" />
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="transformers-content">
+                        <h2>@Html.DisplayFor(model => model.mName)</h2>
+                        <p>@Html.DisplayFor(model => model.mGenre)</p>
+                        <ul>
+                            <li>
+                                <div class="transformers-left">
+                                    Ülke:
+                                </div>
+                                <div class="transformers-right">
+                                    <a href="#">@Html.DisplayFor(model => model.mCountry)</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="transformers-left">
+                                    Yazarlar:
+                                </div>
+                                <div class="transformers-right">
+                                    @Html.DisplayFor(model => model.mWritters)
+                                </div>
+                            </li>
+                            <li>
+                                <div class="transformers-left">
+                                    Oyuncular:
+                                </div>
+                                <div class="transformers-right">
+                                    @Html.DisplayFor(model => model.mCast)
+                                </div>
+                            </li>
+                            <li>
+                                <div class="transformers-left">
+                                    Yönetmenler:
+                                </div>
+                                <div class="transformers-right">
+                                    @Html.DisplayFor(model => model.mDirectors)
+                                </div>
+                            </li>
+                            <li>
+                                <div class="transformers-left">
+                                    Süre:
+                                </div>
+                                <div class="transformers-right">
+                                    @Html.DisplayFor(model => model.mTime)
+                                </div>
+                            </li>
+                            <li>
+                                <div class="transformers-left">
+                                    Vizyon Tarihi:
+                                </div>
+                                <div class="transformers-right">
+                                    @Html.DisplayFor(model => model.mReleaseDate)
+                                </div>
+                            </li>
+                            <li>
+                                <div class="transformers-left">
+                                    Dil:
+                                </div>
+                                <div class="transformers-right">
+                                    @Html.DisplayFor(model => model.mLanguage)
+                                </div>
+                            </li>
+                            <li>
+                                <div class="transformers-left">
+                                    Share:
+                                </div>
+                                <div class="transformers-right">
+                                    <a href="#"><i class="icofont icofont-social-facebook"></i></a>
+                                    <a href="#"><i class="icofont icofont-social-twitter"></i></a>
+                                    <a href="#"><i class="icofont icofont-social-google-plus"></i></a>
+                                    <a href="#"><i class="icofont icofont-youtube-play"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <a href="@Url.Action("BuyTicket", "UserBuyTicket", new { id = @Html.DisplayFor(model => model.m_id) })" class="theme-btn"><i class="icofont icofont-ticket"></i> Bilet Al </a>
+        </div>
+    </div>
+</section><!-- transformers area end -->
+<!-- details area start -->
+<section class="details-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="details-content">
+                    <div class="details-overview">
+                        <h2>Filmin Konusu</h2>
+                        <p>@Html.DisplayFor(model => model.mInformation)</p>
+                    </div>
+
+                        <div class="details-reply">
+                            <h2>Bir Yorum Bırak</h2>
+                            <form action="#">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="select-container">
+                                            <input type="text" id="kullaniciadi" name="kullaniciadi" placeholder="Kullanıcı Adınız" />
+                                            <i class="icofont icofont-ui-user"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="select-container">
+                                            <input type="text" id="email" name="email" placeholder="Email" />
+                                            <i class="icofont icofont-envelope"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="select-container">
+                                            <input type="text" id="phone" name="phone" placeholder="Telefon" />
+                                            <i class="icofont icofont-phone"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="textarea-container">
+                                            <textarea id="comment" name="comment" placeholder="Buraya Mesajınızı Yazınız"></textarea>
+                                            <button><i class="icofont icofont-send-mail"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="details-comment">
+                            <input class="theme-btn theme-btn2" type="submit" href="#" value="Yorum Yap" />
+                            <p>You may use these HTML tags and attributes: You may use these HTML tags and attributes: You may use these HTML tags and attributes: </p>
+                        </div>
+
+
+                    
+
+                    <div class="details-thumb">
+                        <div class="details-thumb-prev">
+                            <div class="thumb-icon">
+                                <i class="icofont icofont-simple-left"></i>
+                            </div>
+                            <div class="thumb-text">
+                                <h4>Previous Post</h4>
+                                <p>Standard Post With Gallery</p>
+                            </div>
+                        </div>
+                        <div class="details-thumb-next">
+                            <div class="thumb-text">
+                                <h4>Next Post</h4>
+                                <p>Standard Post With Preview Image</p>
+                            </div>
+                            <div class="thumb-icon">
+                                <i class="icofont icofont-simple-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 text-center text-lg-left">
+                <div class="portfolio-sidebar">
+                    <img src="~/Content/User/assets/img/sidebar/side1.png" alt="sidebar" />
+                    <img src="~/Content/User/assets/img/sidebar/side2.png" alt="sidebar" />
+                    <img src="~/Content/User/assets/img/sidebar/side4.png" alt="sidebar" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- details area end -->
